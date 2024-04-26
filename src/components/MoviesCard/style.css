@@ -1,0 +1,9 @@
+.imgContainer {
+  border: solid 2px #fefded;
+  width: 12%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}

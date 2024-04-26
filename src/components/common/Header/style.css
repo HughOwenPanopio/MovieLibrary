@@ -4,9 +4,11 @@
   color: #fefded;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1.5rem;
   text-align: center;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .header p {
@@ -15,10 +17,18 @@
 }
 
 .searchBar {
+  background-color: #31363f;
+  color: #fefded;
+  font-size: 20px;
   height: 3rem;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
+  border-color: #fefded;
+}
+.searchBar::placeholder {
+  color: #fefded;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 665px) {

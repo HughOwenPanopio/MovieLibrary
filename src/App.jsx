@@ -1,10 +1,12 @@
 import './App.css'
 import Header from './components/common/Header'
+import MovieList from './components/MovieList'
 
 function App() {
   return (
     <>
       <Header />
+      <MovieList />
     </>
   )
 }
