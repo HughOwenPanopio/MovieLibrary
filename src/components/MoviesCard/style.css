@@ -1,9 +1,21 @@
 .imgContainer {
-  border: solid 2px #fefded;
-  width: 12%;
+  border: solid 5px #fefded;
+  border-radius: 5px;
+  width: 200px;
 }
 
 img {
   width: 100%;
   height: 100%;
+}
+
+.card-content {
+  color: #fefded;
+  display: block;
+}
+
+@media screen and (max-width: 665px) {
+  .card-content p {
+    display: block;
+  }
 }

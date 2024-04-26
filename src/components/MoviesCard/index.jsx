@@ -8,8 +8,10 @@ function MoviesCard({ movies }) {
         <div className="imgContainer">
           <img src={movies.poster} alt={movies.title} />
         </div>
-        <h3>{movies.title}</h3>
-        <p>{movies.year}</p>
+        <div className="card-content">
+          <h3>{movies.title}</h3>
+          <p>{movies.year}</p>
+        </div>
       </div>
     </>
   )
