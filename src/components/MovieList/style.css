@@ -10,6 +10,14 @@
   margin: auto;
 }
 
+.movieList-header {
+  margin-bottom: 30px;
+  color: #fefded;
+  align-items: center !important;
+  justify-content: center;
+  text-align: center;
+}
+
 @media screen and (max-width: 415px) {
   .moviesContainer {
     gap: 2rem;
