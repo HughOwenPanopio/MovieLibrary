@@ -2,12 +2,12 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import './style.css'
 
-function Box({ children }) {
+function Box({ children, width }) {
   const [toggleItems, setToggleItems] = useState(true)
 
   return (
     <>
-      <div className="box-container">
+      <div className="box-container" style={{ width: width }}>
         <div className="btn-toggle-container">
           <button
             onClick={() => setToggleItems((open) => !open)}
@@ -25,6 +25,7 @@ function Box({ children }) {
 
 Box.propTypes = {
   children: PropTypes.node,
+  width: PropTypes.string,
 }
 
 export default Box

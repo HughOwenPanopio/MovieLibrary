@@ -1,0 +1,24 @@
+.list-movie {
+  display: flex;
+  gap: 20px;
+  color: #fefded;
+  align-items: end;
+}
+
+.list-movie-img {
+  width: 25%;
+}
+
+.list-movie img {
+  width: 100%;
+}
+
+.details-container {
+  display: flex;
+}
+
+.details {
+  display: flex;
+  gap: 20px;
+  align-items: end;
+}

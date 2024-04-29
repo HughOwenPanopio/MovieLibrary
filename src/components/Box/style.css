@@ -14,8 +14,24 @@
 
 .box-container {
   width: 70%;
+  height: 45rem;
   margin: 8rem auto;
   background-color: #222831;
   padding: 15px;
   border-radius: 8px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.box-container::-webkit-scrollbar {
+  width: 12px;
+}
+.box-container::-webkit-scrollbar-track {
+  background-color: #222831;
+}
+.box-container::-webkit-scrollbar-thumb {
+  background-color: #222831;
+}
+.box-container::-webkit-scrollbar-thumb:hover {
+  background-color: #31363f;
 }
