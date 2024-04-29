@@ -3,22 +3,26 @@
   gap: 20px;
   color: #fefded;
   align-items: end;
+  border-bottom: solid 1px #31363f;
+  padding: 5px;
 }
 
 .list-movie-img {
-  width: 25%;
+  width: 20%;
 }
 
 .list-movie img {
   width: 100%;
 }
 
-.details-container {
-  display: flex;
-}
-
 .details {
   display: flex;
   gap: 20px;
   align-items: end;
+}
+
+@media screen and (max-width: 684px) {
+  .list-movie-img {
+    display: none;
+  }
 }

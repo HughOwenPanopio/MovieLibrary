@@ -8,20 +8,20 @@ function WatchedMovies({ watched }) {
         <div className="list-movie-img">
           <img src={watched.poster} alt={watched.title} />
         </div>
-
-        <div className="details-container">
+        <div>
           <div>
             <h3>{watched.title}</h3>
-            <p>{watched.year}</p>
           </div>
           <div className="details">
             <p>
-              <span>{watched.runtime} </span>
-              <span>minutes</span>
+              <span>⭐</span> <span>{watched.imdbRating}</span>
             </p>
             <p>
-              <span>{watched.imdbRating}</span>
-              <span>⭐</span>
+              <span>⭐</span> <span>{watched.userRating}</span>
+            </p>
+            <p>
+              <span>Run Time: </span> <span>{watched.runtime}</span>{' '}
+              <span>min</span>
             </p>
           </div>
         </div>

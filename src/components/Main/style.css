@@ -3,3 +3,9 @@
   flex-direction: row;
   flex-wrap: wrap !important;
 }
+
+@media screen and (max-width: 768px) {
+  .Main-Container {
+    display: block;
+  }
+}
