@@ -11,7 +11,7 @@ import ErrorMessage from './components/ErrorMessage'
 const KEY = '13f0e909'
 
 function App() {
-  const [query, setQuery] = useState('back to the future')
+  const [query, setQuery] = useState('')
   const [movies, setMovies] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')

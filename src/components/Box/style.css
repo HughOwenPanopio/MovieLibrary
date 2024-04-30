@@ -16,7 +16,7 @@
   width: 70%;
   height: 45rem;
   margin: 8rem auto;
-  background-color: #222831;
+  background-color: #31363f rgba(49, 54, 63, 0.8);
   padding: 15px;
   border-radius: 8px;
   overflow: scroll;
@@ -26,13 +26,13 @@
 .box-container::-webkit-scrollbar {
   width: 12px;
 }
-.box-container::-webkit-scrollbar-track {
+/* .box-container::-webkit-scrollbar-track {
   background-color: #222831;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-}
+} */
 .box-container::-webkit-scrollbar-thumb {
-  background-color: #222831;
+  /* background-color: #222831; */
   border-radius: 8px;
 }
 .box-container::-webkit-scrollbar-thumb:hover {

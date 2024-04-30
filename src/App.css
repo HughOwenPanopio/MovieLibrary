@@ -1,3 +1,7 @@
 body {
-  background-color: #31363f;
+  /* background-color: #31363f; */
+  background-image: url(https://st4.depositphotos.com/18071024/20167/i/450/depositphotos_201670526-stock-photo-lens-flare-cinematic-background-digital.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
