@@ -1,5 +1,6 @@
 import './style.css'
 import PropTypes from 'prop-types'
+import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500'
 
 function WatchedMovies({ watched }) {
   return (
@@ -14,10 +15,20 @@ function WatchedMovies({ watched }) {
           </div>
           <div className="details">
             <p>
-              <span>⭐</span> <span>{watched.imdbRating}</span>
+              <span>
+                <StarBorderPurple500Icon
+                  sx={{ fontSize: 'medium', color: '#FFC700' }}
+                />
+              </span>{' '}
+              <span>{watched.imdbRating}</span>
             </p>
             <p>
-              <span>⭐</span> <span>{watched.userRating}</span>
+              <span>
+                <StarBorderPurple500Icon
+                  sx={{ fontSize: 'medium', color: '#FFC700' }}
+                />
+              </span>{' '}
+              <span>{watched.userRating}</span>
             </p>
             <p>
               <span>Run Time: </span> <span>{watched.runtime}</span>{' '}
