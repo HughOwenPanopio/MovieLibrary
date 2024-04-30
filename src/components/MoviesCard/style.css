@@ -1,6 +1,7 @@
 .movieCard-container {
   width: 18.5%;
   height: 50%;
+  cursor: pointer;
 }
 
 .imgContainer {
