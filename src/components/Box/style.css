@@ -28,9 +28,12 @@
 }
 .box-container::-webkit-scrollbar-track {
   background-color: #222831;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 .box-container::-webkit-scrollbar-thumb {
   background-color: #222831;
+  border-radius: 8px;
 }
 .box-container::-webkit-scrollbar-thumb:hover {
   background-color: #31363f;

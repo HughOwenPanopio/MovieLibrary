@@ -1,3 +1,8 @@
+.movieCard-container {
+  width: 18.5%;
+  height: 50%;
+}
+
 .imgContainer {
   border: solid 5px #fefded;
   border-radius: 5px;

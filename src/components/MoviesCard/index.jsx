@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types'
 import './style.css'
 
-function MoviesCard({ movies }) {
+function MoviesCard({ movie }) {
   return (
     <>
-      <div>
+      <div className="movieCard-container">
         <div className="imgContainer">
-          <img src={movies.poster} alt={movies.title} />
+          <img src={movie.Poster} alt={movie.Title} />
         </div>
         <div className="card-content">
-          <h3>{movies.title}</h3>
-          <p>{movies.year}</p>
+          <h3>{movie.Title}</h3>
+          <p>{movie.Year}</p>
         </div>
       </div>
     </>
@@ -18,7 +18,7 @@ function MoviesCard({ movies }) {
 }
 
 MoviesCard.propTypes = {
-  movies: PropTypes.object,
+  movie: PropTypes.object,
 }
 
 export default MoviesCard
