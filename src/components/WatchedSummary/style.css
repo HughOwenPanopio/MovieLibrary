@@ -1,0 +1,28 @@
+.summary-container {
+  background-image: linear-gradient(
+    to right,
+    #141e46,
+    #242053,
+    #371f5e,
+    #4d1a66,
+    #640d6b
+  );
+  border-radius: 8px;
+  padding: 10px 5px 10px 5px;
+}
+
+.summary-details {
+  display: flex;
+  gap: 2rem;
+  color: #fefded;
+  justify-content: center;
+}
+
+.summary-container h2 {
+  color: #fefded;
+  text-align: center;
+}
+
+.summary-details span {
+  align-items: first baseline;
+}

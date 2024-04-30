@@ -7,6 +7,7 @@ import MovieList from './components/MovieList'
 import WatchList from './components/WatchList'
 import LoadingMessage from './components/LoadingMessage'
 import ErrorMessage from './components/ErrorMessage'
+import WatchedSummary from './components/WatchedSummary'
 
 const KEY = '13f0e909'
 
@@ -57,6 +58,7 @@ function App() {
           {error && <ErrorMessage />}
         </Box>
         <Box width="30%">
+          <WatchedSummary />
           <WatchList />
         </Box>
       </Main>

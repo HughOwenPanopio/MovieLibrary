@@ -1,6 +1,13 @@
 .header {
   padding: 1.5rem;
-  background-color: #222831;
+  background-image: linear-gradient(
+    to right,
+    #141e46,
+    #242053,
+    #371f5e,
+    #4d1a66,
+    #640d6b
+  );
   color: #fefded;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -21,7 +28,7 @@
 }
 
 .searchBar {
-  background-color: #31363f;
+  background-color: #371f5e;
   color: #fefded;
   font-size: 20px;
   height: 3rem;
