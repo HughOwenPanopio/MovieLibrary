@@ -1,12 +1,8 @@
-.btn-toggle {
-  border-radius: 20%;
-  padding: 5px;
+/* .btn-toggle {
   width: 30px;
-  background-color: #371f5e;
   color: #fefded;
-  font-weight: 700;
   cursor: pointer;
-}
+} */
 
 .btn-toggle-container {
   display: flex;
