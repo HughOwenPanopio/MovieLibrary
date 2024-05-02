@@ -19,12 +19,15 @@ function App() {
 
   useEffect(
     function () {
+      const controller = new AbortController()
+
       async function fetchMovies() {
         try {
           setIsLoading(true)
           setError('')
           const res = await fetch(
-            `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`
+            `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+            { signal: controller.signal }
           )
 
           if (!res.ok) throw new Error('This Page is Loading')
@@ -34,6 +37,7 @@ function App() {
           if (data.Response === 'False') throw new Error('Movie Not Found')
 
           setMovies(data.Search)
+          setError('')
         } catch (err) {
           console.log(err.message)
           setError(err.message)
@@ -42,7 +46,16 @@ function App() {
         }
       }
 
+      if (!query.length) {
+        setMovies([])
+        setError('')
+      }
+
       fetchMovies()
+
+      return function () {
+        controller.abort()
+      }
     },
     [query]
   )
@@ -52,11 +65,13 @@ function App() {
       <Header query={query} setQuery={setQuery} movies={movies} />
 
       <Main>
-        <Box width="60%">
-          {isLoading && <LoadingMessage />}
-          {!isLoading && !error && <MovieList movies={movies} />}
-          {error && <ErrorMessage />}
-        </Box>
+        {query && (
+          <Box width="60%">
+            {isLoading && <LoadingMessage />}
+            {!isLoading && !error && <MovieList movies={movies} />}
+            {error && <ErrorMessage />}
+          </Box>
+        )}
         <Box width="30%">
           <WatchedSummary />
           <WatchList />
