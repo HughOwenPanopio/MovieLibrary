@@ -4,10 +4,10 @@ import Box from './components/Box'
 import Header from './components/common/Header'
 import Main from './components/Main'
 import MovieList from './components/MovieList'
-// import WatchList from './components/WatchList'
+import WatchList from './components/WatchList'
 import LoadingMessage from './components/LoadingMessage'
 import ErrorMessage from './components/ErrorMessage'
-// import WatchedSummary from './components/WatchedSummary'
+import WatchedSummary from './components/WatchedSummary'
 import MovieDetails from './components/MovieDetails'
 
 const KEY = '13f0e909'
@@ -84,10 +84,15 @@ function App() {
             {error && <ErrorMessage />}
           </Box>
         )}
-        <Box width="30%">
-          <MovieDetails selectedID={selectedID} />
-          {/* <WatchedSummary />
-          <WatchList /> */}
+        <Box width="35%">
+          {selectedID ? (
+            <MovieDetails selectedID={selectedID} />
+          ) : (
+            <>
+              <WatchedSummary />
+              <WatchList />
+            </>
+          )}
         </Box>
       </Main>
     </>
