@@ -3,7 +3,7 @@ import MoviesCard from '../MoviesCard'
 import './style.css'
 import PropTypes from 'prop-types'
 
-function MovieList({ movies }) {
+function MovieList({ movies, onSelectedMovie }) {
   return (
     <>
       <div className="movieList-header">
@@ -11,7 +11,11 @@ function MovieList({ movies }) {
       </div>
       <div className="moviesContainer">
         {movies.map((movie) => (
-          <MoviesCard movie={movie} key={movie.imdbID} />
+          <MoviesCard
+            movie={movie}
+            key={movie.imdbID}
+            onSelectedMovie={onSelectedMovie}
+          />
         ))}
       </div>
     </>
@@ -20,6 +24,7 @@ function MovieList({ movies }) {
 
 MovieList.propTypes = {
   movies: PropTypes.array,
+  onSelectedMovie: PropTypes.func,
 }
 
 export default MovieList

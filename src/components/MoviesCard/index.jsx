@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types'
 import './style.css'
 
-function MoviesCard({ movie }) {
+function MoviesCard({ movie, onSelectedMovie }) {
   return (
     <>
-      <div className="movieCard-container">
+      <div
+        className="movieCard-container"
+        onClick={() => onSelectedMovie(movie.imdbID)}
+      >
         <div className="imgContainer">
           <img src={movie.Poster} alt={movie.Title} />
         </div>
@@ -19,6 +22,7 @@ function MoviesCard({ movie }) {
 
 MoviesCard.propTypes = {
   movie: PropTypes.object,
+  onSelectedMovie: PropTypes.func,
 }
 
 export default MoviesCard

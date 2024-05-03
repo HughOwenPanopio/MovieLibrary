@@ -1,0 +1,23 @@
+.movieDetails-container {
+  color: #fefded;
+}
+
+.movieDetails-container img {
+  width: 50%;
+}
+
+.imdbLogo {
+  width: 20% !important;
+}
+
+.movieDetails-header {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.movieDetails-header div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
