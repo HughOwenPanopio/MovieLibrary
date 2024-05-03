@@ -18,9 +18,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
   const [selectedID, setSelectedID] = useState(null)
+  const [watched, setWatched] = useState([])
 
   function handleSelectedMovie(id) {
     setSelectedID((selectedID) => (id === selectedID ? null : id))
+  }
+
+  function handleAddMovie(movie) {
+    setWatched((watched) => [...watched, movie])
   }
 
   useEffect(
@@ -86,11 +91,11 @@ function App() {
         )}
         <Box width="35%">
           {selectedID ? (
-            <MovieDetails selectedID={selectedID} />
+            <MovieDetails selectedID={selectedID} onAddMovie={handleAddMovie} />
           ) : (
             <>
               <WatchedSummary />
-              <WatchList />
+              <WatchList watched={watched} />
             </>
           )}
         </Box>

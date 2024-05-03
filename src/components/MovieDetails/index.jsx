@@ -6,9 +6,10 @@ import LoadingMessage from '../LoadingMessage'
 import StarRating from '../StarRating'
 // import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn'
 
-function MovieDetails({ selectedID }) {
+function MovieDetails({ selectedID, onAddMovie }) {
   const [movie, setMovie] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+  const [userRating, setUserRating] = useState(0)
 
   const KEY = '13f0e909'
 
@@ -26,6 +27,19 @@ function MovieDetails({ selectedID }) {
     imdbRating,
     Year: year,
   } = movie
+
+  function handleAdd() {
+    const newWatchedMovie = {
+      imdbID: selectedID,
+      title,
+      poster,
+      imdbRating,
+      runtime,
+      userRating,
+    }
+
+    onAddMovie(newWatchedMovie)
+  }
 
   useEffect(
     function () {
@@ -83,7 +97,10 @@ function MovieDetails({ selectedID }) {
           </div>
           <div className="movieDetails-content">
             <div className="starRating-container">
-              <StarRating />
+              <StarRating onSetRating={setUserRating} />
+              <button className="btn-add" onClick={handleAdd}>
+                Add to list
+              </button>
             </div>
             <p style={{ fontStyle: 'italic' }}>&quot;{plot}&quot;</p>
             <p>
@@ -106,6 +123,7 @@ function MovieDetails({ selectedID }) {
 
 MovieDetails.propTypes = {
   selectedID: PropTypes.string,
+  onAddMovie: PropTypes.func,
 }
 
 export default MovieDetails

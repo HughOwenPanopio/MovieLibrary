@@ -2,16 +2,16 @@ import './style.css'
 import PropTypes from 'prop-types'
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500'
 
-function WatchedMovies({ watched }) {
+function WatchedMovies({ movie }) {
   return (
     <>
       <li className="list-movie">
         <div className="list-movie-img">
-          <img src={watched.poster} alt={watched.title} />
+          <img src={movie.poster} alt={movie.title} />
         </div>
         <div>
           <div>
-            <h3>{watched.title}</h3>
+            <h3>{movie.title}</h3>
           </div>
           <div className="details">
             <p>
@@ -20,7 +20,7 @@ function WatchedMovies({ watched }) {
                   sx={{ fontSize: 'medium', color: '#FFC700' }}
                 />
               </span>{' '}
-              <span>{watched.imdbRating}</span>
+              <span>{movie.imdbRating}</span>
             </p>
             <p>
               <span>
@@ -28,11 +28,10 @@ function WatchedMovies({ watched }) {
                   sx={{ fontSize: 'medium', color: '#FFC700' }}
                 />
               </span>{' '}
-              <span>{watched.userRating}</span>
+              <span>{movie.userRating}</span>
             </p>
             <p>
-              <span>Run Time: </span> <span>{watched.runtime}</span>{' '}
-              <span>min</span>
+              <span>Run Time: </span> <span>{movie.runtime}</span>
             </p>
           </div>
         </div>
@@ -42,7 +41,7 @@ function WatchedMovies({ watched }) {
 }
 
 WatchedMovies.propTypes = {
-  watched: PropTypes.object,
+  movie: PropTypes.object,
 }
 
 export default WatchedMovies
