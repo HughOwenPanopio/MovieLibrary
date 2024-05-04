@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500'
 import LoadingMessage from '../LoadingMessage'
 import StarRating from '../StarRating'
+import imdbLogo from '../../assets/imdbLogo.png'
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn'
 
 function MovieDetails({ selectedID, onAddMovie, onCloseMovie }) {
@@ -90,11 +91,7 @@ function MovieDetails({ selectedID, onAddMovie, onCloseMovie }) {
 
               <p className="rating-container">
                 <span className="imdbLogo-container">
-                  <img
-                    src="../../../public/imdbLogo.png"
-                    className="imdbLogo"
-                    alt="imdbLogo"
-                  />
+                  <img src={imdbLogo} className="imdbLogo" alt="imdbLogo" />
                 </span>
                 <span className="rating"> {imdbRating} </span>
                 <span>
