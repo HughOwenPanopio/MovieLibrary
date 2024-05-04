@@ -21,6 +21,19 @@
   align-items: end;
 }
 
+.btn-delete {
+  border-radius: 8px;
+  border: none;
+  color: #fefded;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.btn-delete:hover {
+  background-color: #640d6b;
+}
+
 @media screen and (max-width: 684px) {
   .list-movie-img {
     display: none;

@@ -3,12 +3,16 @@ import WatchedMovies from '../WatchedMovies'
 import PropTypes from 'prop-types'
 import './style.css'
 
-function WatchList({ watched }) {
+function WatchList({ watched, onDeleteWatched }) {
   return (
     <>
       <ul className="list">
         {watched.map((movie) => (
-          <WatchedMovies movie={movie} key={movie.imdbID} />
+          <WatchedMovies
+            movie={movie}
+            key={movie.imdbID}
+            onDeleteWatched={onDeleteWatched}
+          />
         ))}
       </ul>
     </>
@@ -17,6 +21,7 @@ function WatchList({ watched }) {
 
 WatchList.propTypes = {
   watched: PropTypes.array,
+  onDeleteWatched: PropTypes.func,
 }
 
 export default WatchList

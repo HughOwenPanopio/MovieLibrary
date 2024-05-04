@@ -33,6 +33,10 @@ function App() {
     setSelectedID(null)
   }
 
+  function handleDeleteWatched(id) {
+    setWatched((watched) => watched.filter((movie) => movie.imdbID !== id))
+  }
+
   useEffect(
     function () {
       const controller = new AbortController()
@@ -105,7 +109,10 @@ function App() {
           ) : (
             <>
               <WatchedSummary watched={watched} />
-              <WatchList watched={watched} />
+              <WatchList
+                watched={watched}
+                onDeleteWatched={handleDeleteWatched}
+              />
             </>
           )}
         </Box>

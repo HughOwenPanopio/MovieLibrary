@@ -1,8 +1,10 @@
 import './style.css'
 import PropTypes from 'prop-types'
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500'
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
+// import RemoveIcon from '@mui/icons-material/Remove';
 
-function WatchedMovies({ movie }) {
+function WatchedMovies({ movie, onDeleteWatched }) {
   return (
     <>
       <li className="list-movie">
@@ -35,6 +37,13 @@ function WatchedMovies({ movie }) {
             <p>
               <span>Run Time: </span> <span>{movie.runtime} minutes</span>
             </p>
+            <button className="btn-delete">
+              <span>
+                <DeleteOutlineIcon
+                  onClick={() => onDeleteWatched(movie.imdbID)}
+                />
+              </span>
+            </button>
           </div>
         </div>
       </li>
@@ -44,6 +53,7 @@ function WatchedMovies({ movie }) {
 
 WatchedMovies.propTypes = {
   movie: PropTypes.object,
+  onDeleteWatched: PropTypes.func,
 }
 
 export default WatchedMovies

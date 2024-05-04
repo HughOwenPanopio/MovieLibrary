@@ -51,6 +51,7 @@
   background-color: #640d6b;
   text-transform: uppercase;
   cursor: pointer;
+  box-shadow: #141e46 6px 5px 8px;
 }
 
 .starRating-container {
