@@ -59,6 +59,18 @@ function MovieDetails({ selectedID, onAddMovie }) {
     [selectedID]
   )
 
+  useEffect(
+    function () {
+      if (!title) return
+      document.title = `${type} | ${title}`
+
+      return function () {
+        document.title = 'MovieLibrary'
+      }
+    },
+    [title, type]
+  )
+
   return (
     <>
       {isLoading ? (
