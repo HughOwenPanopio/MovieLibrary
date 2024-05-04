@@ -28,6 +28,10 @@ function App() {
     setWatched((watched) => [...watched, movie])
   }
 
+  function handleCloseMovie() {
+    setSelectedID(null)
+  }
+
   useEffect(
     function () {
       const controller = new AbortController()
@@ -91,7 +95,11 @@ function App() {
         )}
         <Box width="35%">
           {selectedID ? (
-            <MovieDetails selectedID={selectedID} onAddMovie={handleAddMovie} />
+            <MovieDetails
+              selectedID={selectedID}
+              onAddMovie={handleAddMovie}
+              onCloseMovie={handleCloseMovie}
+            />
           ) : (
             <>
               <WatchedSummary />

@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500'
 import LoadingMessage from '../LoadingMessage'
 import StarRating from '../StarRating'
-// import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn'
+import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn'
 
-function MovieDetails({ selectedID, onAddMovie }) {
+function MovieDetails({ selectedID, onAddMovie, onCloseMovie }) {
   const [movie, setMovie] = useState({})
   const [isLoading, setIsLoading] = useState(false)
   const [userRating, setUserRating] = useState(0)
@@ -77,14 +77,14 @@ function MovieDetails({ selectedID, onAddMovie }) {
         <LoadingMessage />
       ) : (
         <div className="movieDetails-container">
+          <KeyboardReturnIcon className="btn-back" onClick={onCloseMovie} />
           <div className="movieDetails-header">
-            {/* <KeyboardReturnIcon className="btn-back" /> */}
             <img src={poster} alt={movie.title} />
             <div>
               <h1>{title}</h1>
               <h3>{released}</h3>
               <p>
-                <span>{runtime}</span> <span>min</span>
+                <span>{runtime}</span>
               </p>
               <p>{genre}</p>
 
@@ -136,6 +136,7 @@ function MovieDetails({ selectedID, onAddMovie }) {
 MovieDetails.propTypes = {
   selectedID: PropTypes.string,
   onAddMovie: PropTypes.func,
+  onCloseMovie: PropTypes.func,
 }
 
 export default MovieDetails
