@@ -26,6 +26,7 @@ function App() {
 
   function handleAddMovie(movie) {
     setWatched((watched) => [...watched, movie])
+    setSelectedID(null)
   }
 
   function handleCloseMovie() {
