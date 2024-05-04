@@ -11,11 +11,23 @@
 }
 
 .movieList-header {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
   margin-bottom: 30px;
   color: #fefded;
   align-items: center !important;
   justify-content: center;
   text-align: center;
+  background-image: linear-gradient(
+    to right,
+    #141e46,
+    #242053,
+    #371f5e,
+    #4d1a66,
+    #640d6b
+  );
+  border-radius: 8px;
+  padding: 10px 25px 10px 140px;
 }
 
 @media screen and (max-width: 1024px) {

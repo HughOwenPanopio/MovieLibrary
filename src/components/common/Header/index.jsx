@@ -1,7 +1,7 @@
 import './style.css'
 import PropTypes from 'prop-types'
 
-function Header({ query, setQuery, movies }) {
+function Header({ query, setQuery }) {
   return (
     <>
       <header>
@@ -14,7 +14,6 @@ function Header({ query, setQuery, movies }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <p>{movies.length} movies found</p>
         </div>
       </header>
     </>
@@ -24,7 +23,6 @@ function Header({ query, setQuery, movies }) {
 Header.propTypes = {
   query: PropTypes.string,
   setQuery: PropTypes.func,
-  movies: PropTypes.array,
 }
 
 export default Header

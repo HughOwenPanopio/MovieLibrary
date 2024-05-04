@@ -8,6 +8,7 @@ function MovieList({ movies, onSelectedMovie }) {
     <>
       <div className="movieList-header">
         <h2>Movie List</h2>
+        <p>{movies.length} movies found</p>
       </div>
       <div className="moviesContainer">
         {movies.map((movie) => (
