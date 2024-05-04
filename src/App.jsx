@@ -99,10 +99,11 @@ function App() {
               selectedID={selectedID}
               onAddMovie={handleAddMovie}
               onCloseMovie={handleCloseMovie}
+              watched={watched}
             />
           ) : (
             <>
-              <WatchedSummary />
+              <WatchedSummary watched={watched} />
               <WatchList watched={watched} />
             </>
           )}

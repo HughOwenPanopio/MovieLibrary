@@ -7,10 +7,15 @@ import StarRating from '../StarRating'
 import imdbLogo from '../../assets/imdbLogo.png'
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn'
 
-function MovieDetails({ selectedID, onAddMovie, onCloseMovie }) {
+function MovieDetails({ selectedID, onAddMovie, onCloseMovie, watched }) {
   const [movie, setMovie] = useState({})
   const [isLoading, setIsLoading] = useState(false)
   const [userRating, setUserRating] = useState(0)
+
+  const isWatched = watched.map((movie) => movie.imdbID).includes(selectedID)
+  const watchedUserRating = watched.find(
+    (movie) => movie.imdbID === selectedID
+  )?.userRating
 
   const KEY = '13f0e909'
 
@@ -122,10 +127,21 @@ function MovieDetails({ selectedID, onAddMovie, onCloseMovie }) {
           </div>
           <div className="movieDetails-content">
             <div className="starRating-container">
-              <StarRating onSetRating={setUserRating} />
-              <button className="btn-add" onClick={handleAdd}>
-                Add to list
-              </button>
+              {!isWatched ? (
+                <>
+                  <StarRating onSetRating={setUserRating} />
+                  <button className="btn-add" onClick={handleAdd}>
+                    Add to list
+                  </button>
+                </>
+              ) : (
+                <p>
+                  Added to list with {watchedUserRating}{' '}
+                  <StarBorderPurple500Icon
+                    sx={{ fontSize: 'medium', color: '#FFC700' }}
+                  />
+                </p>
+              )}
             </div>
             <p style={{ fontStyle: 'italic' }}>&quot;{plot}&quot;</p>
             <p>
@@ -150,6 +166,7 @@ MovieDetails.propTypes = {
   selectedID: PropTypes.string,
   onAddMovie: PropTypes.func,
   onCloseMovie: PropTypes.func,
+  watched: PropTypes.array,
 }
 
 export default MovieDetails

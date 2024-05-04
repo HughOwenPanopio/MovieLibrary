@@ -1,9 +1,10 @@
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500'
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies'
+import PropTypes from 'prop-types'
 import './style.css'
 
-function WatchedSummary() {
+function WatchedSummary({ watched }) {
   return (
     <>
       <div className="summary-container">
@@ -43,6 +44,10 @@ function WatchedSummary() {
       </div>
     </>
   )
+}
+
+WatchedSummary.propTypes = {
+  watched: PropTypes.array,
 }
 
 export default WatchedSummary
