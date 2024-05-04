@@ -18,7 +18,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
   const [selectedID, setSelectedID] = useState(null)
-  const [watched, setWatched] = useState([])
+
+  const [watched, setWatched] = useState(function () {
+    const storedMovies = localStorage.getItem('watched')
+    return JSON.parse(storedMovies) || []
+  })
 
   function handleSelectedMovie(id) {
     setSelectedID((selectedID) => (id === selectedID ? null : id))
@@ -36,6 +40,13 @@ function App() {
   function handleDeleteWatched(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id))
   }
+
+  useEffect(
+    function () {
+      localStorage.setItem('watched', JSON.stringify(watched))
+    },
+    [watched]
+  )
 
   useEffect(
     function () {
@@ -57,11 +68,13 @@ function App() {
           if (data.Response === 'False') throw new Error('Movie Not Found')
 
           setMovies(data.Search)
-          console.log(data.Search)
+          // console.log(data.Search)
           setError('')
         } catch (err) {
-          console.log(err.message)
-          setError(err.message)
+          if (err.message === 'AbortError') {
+            console.log(err.message)
+            setError(err.message)
+          }
         } finally {
           setIsLoading(false)
         }
