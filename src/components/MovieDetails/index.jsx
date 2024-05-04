@@ -40,7 +40,7 @@ function MovieDetails({ selectedID, onAddMovie, onCloseMovie, watched }) {
       title,
       poster,
       imdbRating,
-      runtime,
+      runtime: Number(runtime.split(' ').at(0)),
       userRating,
     }
 

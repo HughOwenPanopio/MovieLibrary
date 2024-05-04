@@ -31,7 +31,7 @@ function WatchedMovies({ movie }) {
               <span>{movie.userRating}</span>
             </p>
             <p>
-              <span>Run Time: </span> <span>{movie.runtime}</span>
+              <span>Run Time: </span> <span>{movie.runtime} minutes</span>
             </p>
           </div>
         </div>
