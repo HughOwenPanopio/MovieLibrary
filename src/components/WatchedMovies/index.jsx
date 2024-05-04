@@ -15,6 +15,7 @@ function WatchedMovies({ movie }) {
           </div>
           <div className="details">
             <p>
+              <span>IMDB: </span>
               <span>
                 <StarBorderPurple500Icon
                   sx={{ fontSize: 'medium', color: '#FFC700' }}
@@ -23,6 +24,7 @@ function WatchedMovies({ movie }) {
               <span>{movie.imdbRating}</span>
             </p>
             <p>
+              <span>User: </span>
               <span>
                 <StarBorderPurple500Icon
                   sx={{ fontSize: 'medium', color: '#FFC700' }}

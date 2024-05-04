@@ -130,9 +130,9 @@ function MovieDetails({ selectedID, onAddMovie, onCloseMovie, watched }) {
               {!isWatched ? (
                 <>
                   <StarRating onSetRating={setUserRating} />
-                  <button className="btn-add" onClick={handleAdd}>
+                  {userRating > 1 && <button className="btn-add" onClick={handleAdd}>
                     Add to list
-                  </button>
+                  </button>}
                 </>
               ) : (
                 <p>

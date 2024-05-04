@@ -26,3 +26,12 @@
 .summary-details span {
   align-items: first baseline;
 }
+
+.imdbLogo {
+  width: 15% !important;
+  height: auto;
+}
+
+.imdbRating-container {
+  width: 30%;
+}

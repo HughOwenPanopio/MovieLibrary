@@ -24,20 +24,22 @@ function WatchedSummary({ watched }) {
             <span>{watched.length} Movies</span>
           </p>
           <p>
+            <span>IMDB: </span>
             <span>
               <StarBorderPurple500Icon
                 sx={{ fontSize: 'medium', color: '#FFC700' }}
               />
             </span>
-            <span>{averageImdbRating.toFixed(1)}</span>
+            <span> {averageImdbRating.toFixed(1)}</span>
           </p>
           <p>
+            <span>User: </span>
             <span>
               <StarBorderPurple500Icon
                 sx={{ fontSize: 'medium', color: '#FFC700' }}
               />
             </span>
-            <span>{averageUserRating.toFixed(1)}</span>
+            <span> {averageUserRating.toFixed(1)}</span>
           </p>
           <p>
             <span>
@@ -45,7 +47,7 @@ function WatchedSummary({ watched }) {
                 sx={{ fontSize: 'medium', color: '#FFC700' }}
               />
             </span>
-            <span>{averageRunTime} minutes</span>
+            <span>{averageRunTime.toFixed(1)} minutes</span>
           </p>
         </div>
       </div>
