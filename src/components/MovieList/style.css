@@ -12,7 +12,7 @@
 
 .movieList-header {
   display: grid;
-  grid-template-columns: 2.5fr 1fr;
+  grid-template-columns: 6fr 1fr;
   margin-bottom: 30px;
   color: #fefded;
   align-items: center !important;
@@ -39,6 +39,12 @@
     width: 100%;
     margin-top: -6rem;
   }
+  .movieList-header {
+    padding-left: 5rem;
+  }
+  .movieList-header p {
+    font-size: 10px;
+  }
 }
 
 @media screen and (max-width: 684px) {
@@ -48,13 +54,13 @@
     gap: 2rem;
   }
   .movieList-header {
-    padding-left: 7rem;
+    padding-left: 5rem;
   }
 }
 
 @media screen and (max-width: 450px) {
   .movieList-header {
-    padding-left: 5rem;
+    padding-left: 4rem;
   }
   .movieList-header p {
     display: none;
@@ -78,7 +84,7 @@
     display: none;
   }
   .movieList-header {
-    padding-left: 5rem;
+    padding-left: 3rem;
   }
   .moviesContainer {
     display: flex !important;
