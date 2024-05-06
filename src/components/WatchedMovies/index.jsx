@@ -8,7 +8,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime'
 
 function WatchedMovies({ movie, onDeleteWatched }) {
   const isDesktop = useMediaQuery('(max-width: 1024px)')
-  const isMobile = useMediaQuery('(max-width: 415px)')
+  const isMobile = useMediaQuery('(max-width: 450px)')
 
   return (
     <>

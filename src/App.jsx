@@ -75,7 +75,7 @@ function App() {
           setError('')
         } catch (err) {
           if (err.message === 'AbortError') {
-            console.log(err.message)
+            // console.log(err.message)
             setError(err.message)
           }
         } finally {

@@ -56,6 +56,9 @@
   .movieList-header {
     padding-left: 5rem;
   }
+  .movieList-header p {
+    display: none;
+  }
   .moviesContainer {
     display: flex !important;
     flex-direction: row;
