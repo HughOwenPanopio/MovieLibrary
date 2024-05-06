@@ -21,6 +21,52 @@ img {
   display: block;
 }
 
+@media screen and (max-width: 1440px) {
+  .movieCard-container {
+    width: 25% !important;
+  }
+  .card-content h3,
+  p {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .movieCard-container {
+    width: 100% !important;
+  }
+  .imgContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .movieCard-container {
+    width: 90% !important;
+  }
+  .imgContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .movieCard-container {
+    width: 90% !important;
+  }
+  .imgContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .movieCard-container {
+    width: 100% !important;
+  }
+  .imgContainer {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 665px) {
   .card-content p {
     display: block;

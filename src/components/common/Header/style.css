@@ -41,8 +41,7 @@
   .header {
     display: block;
   }
-  .header h1,
-  p {
-    display: none;
+  .header h1 {
+    display: block;
   }
 }

@@ -1,11 +1,15 @@
+import { useMediaQuery } from '@mui/material'
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 import Typography from '@mui/material/Typography'
+
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
 export default function StarRating({ onSetRating }) {
   const [rating, setRating] = useState(0)
+
+  const isDesktop = useMediaQuery('(max-width: 415px)')
 
   function handleRating(e, newRating) {
     setRating(newRating)
@@ -25,6 +29,7 @@ export default function StarRating({ onSetRating }) {
         max={10}
         value={rating}
         onChange={handleRating}
+        style={isDesktop ? { fontSize: '18px' } : {}}
       />
     </Box>
   )

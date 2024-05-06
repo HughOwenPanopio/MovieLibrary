@@ -34,7 +34,31 @@
   background-color: #640d6b;
 }
 
+@media screen and (max-width: 1440px) {
+  .list-movie h3 {
+    font-size: 17px;
+  }
+  .details p {
+    font-size: 15px;
+  }
+}
+
 @media screen and (max-width: 684px) {
+  .list-movie-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .list-movie-img {
+    display: block;
+  }
+  .details p {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 457px) {
   .list-movie-img {
     display: none;
   }

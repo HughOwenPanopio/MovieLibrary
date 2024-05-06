@@ -3,8 +3,11 @@ import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies'
 import PropTypes from 'prop-types'
 import './style.css'
+import { useMediaQuery } from '@mui/material'
 
 function WatchedSummary({ watched }) {
+  const isDesktop = useMediaQuery('(max-width: 1440px)')
+
   const average = (arr) =>
     arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0)
 
@@ -21,10 +24,12 @@ function WatchedSummary({ watched }) {
             <span>
               <LocalMoviesIcon sx={{ fontSize: 'medium', color: '#FFC700' }} />
             </span>
-            <span>{watched.length} Movies</span>
+            <span>
+              {watched.length} {isDesktop || 'Movies'}
+            </span>
           </p>
           <p>
-            <span>IMDB: </span>
+            <span>{isDesktop || 'IMDB:'} </span>
             <span>
               <StarBorderPurple500Icon
                 sx={{ fontSize: 'medium', color: '#FFC700' }}
@@ -33,7 +38,7 @@ function WatchedSummary({ watched }) {
             <span> {averageImdbRating.toFixed(1)}</span>
           </p>
           <p>
-            <span>User: </span>
+            <span>{isDesktop || 'User:'} </span>
             <span>
               <StarBorderPurple500Icon
                 sx={{ fontSize: 'medium', color: '#FFC700' }}
@@ -47,7 +52,9 @@ function WatchedSummary({ watched }) {
                 sx={{ fontSize: 'medium', color: '#FFC700' }}
               />
             </span>
-            <span>{averageRunTime.toFixed(1)} minutes</span>
+            <span>
+              {averageRunTime.toFixed(1)} {isDesktop || 'minutes'}
+            </span>
           </p>
         </div>
       </div>

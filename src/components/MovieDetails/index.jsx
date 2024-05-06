@@ -99,7 +99,29 @@ function MovieDetails({ selectedID, onAddMovie, onCloseMovie, watched }) {
         <LoadingMessage />
       ) : (
         <div className="movieDetails-container">
-          <KeyboardReturnIcon className="btn-back" onClick={onCloseMovie} />
+          <div className="starRating-container">
+            <div>
+              <KeyboardReturnIcon className="btn-back" onClick={onCloseMovie} />
+            </div>
+            <div>
+              {!isWatched ? (
+                <>
+                  <StarRating onSetRating={setUserRating} />
+
+                  <button className="btn-add" onClick={handleAdd}>
+                    Add to list
+                  </button>
+                </>
+              ) : (
+                <p>
+                  Added to list with {watchedUserRating}{' '}
+                  <StarBorderPurple500Icon
+                    sx={{ fontSize: 'medium', color: '#FFC700' }}
+                  />
+                </p>
+              )}
+            </div>
+          </div>
           <div className="movieDetails-header">
             <img src={poster} alt={movie.title} />
             <div>
@@ -126,25 +148,6 @@ function MovieDetails({ selectedID, onAddMovie, onCloseMovie, watched }) {
             </div>
           </div>
           <div className="movieDetails-content">
-            <div className="starRating-container">
-              {!isWatched ? (
-                <>
-                  <StarRating onSetRating={setUserRating} />
-                  {userRating > 1 && (
-                    <button className="btn-add" onClick={handleAdd}>
-                      Add to list
-                    </button>
-                  )}
-                </>
-              ) : (
-                <p>
-                  Added to list with {watchedUserRating}{' '}
-                  <StarBorderPurple500Icon
-                    sx={{ fontSize: 'medium', color: '#FFC700' }}
-                  />
-                </p>
-              )}
-            </div>
             <p style={{ fontStyle: 'italic' }}>&quot;{plot}&quot;</p>
             <p>
               <span>Starring </span>

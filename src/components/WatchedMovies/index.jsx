@@ -2,9 +2,14 @@ import './style.css'
 import PropTypes from 'prop-types'
 import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
+import { useMediaQuery } from '@mui/material'
+import AccessTimeIcon from '@mui/icons-material/AccessTime'
 // import RemoveIcon from '@mui/icons-material/Remove';
 
 function WatchedMovies({ movie, onDeleteWatched }) {
+  const isDesktop = useMediaQuery('(max-width: 1024px)')
+  const isMobile = useMediaQuery('(max-width: 415px)')
+
   return (
     <>
       <li className="list-movie">
@@ -17,7 +22,7 @@ function WatchedMovies({ movie, onDeleteWatched }) {
           </div>
           <div className="details">
             <p>
-              <span>IMDB: </span>
+              <span>{isMobile || 'IMDB:'} </span>
               <span>
                 <StarBorderPurple500Icon
                   sx={{ fontSize: 'medium', color: '#FFC700' }}
@@ -26,7 +31,7 @@ function WatchedMovies({ movie, onDeleteWatched }) {
               <span>{movie.imdbRating}</span>
             </p>
             <p>
-              <span>User: </span>
+              <span>{isMobile || 'User:'} </span>
               <span>
                 <StarBorderPurple500Icon
                   sx={{ fontSize: 'medium', color: '#FFC700' }}
@@ -35,7 +40,18 @@ function WatchedMovies({ movie, onDeleteWatched }) {
               <span>{movie.userRating}</span>
             </p>
             <p>
-              <span>Run Time: </span> <span>{movie.runtime} minutes</span>
+              <span>
+                {isDesktop ? (
+                  <AccessTimeIcon
+                    sx={{ fontSize: 'medium', color: '#FFC700' }}
+                  />
+                ) : (
+                  'Run Time:'
+                )}
+              </span>{' '}
+              <span>
+                {movie.runtime} {isMobile ? 'min' : 'minutes'}
+              </span>
             </p>
             <button className="btn-delete">
               <span>

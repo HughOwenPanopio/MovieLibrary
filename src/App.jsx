@@ -9,6 +9,7 @@ import LoadingMessage from './components/LoadingMessage'
 import ErrorMessage from './components/ErrorMessage'
 import WatchedSummary from './components/WatchedSummary'
 import MovieDetails from './components/MovieDetails'
+import { useMediaQuery } from '@mui/material'
 
 const KEY = '13f0e909'
 
@@ -23,6 +24,8 @@ function App() {
     const storedMovies = localStorage.getItem('watched')
     return JSON.parse(storedMovies) || []
   })
+
+  const isDesktop = useMediaQuery('(max-width: 1023px)')
 
   function handleSelectedMovie(id) {
     setSelectedID((selectedID) => (id === selectedID ? null : id))
@@ -100,7 +103,7 @@ function App() {
 
       <Main>
         {query && (
-          <Box width="60%">
+          <Box width={isDesktop ? '80%' : '60%'}>
             {isLoading && <LoadingMessage />}
             {!isLoading && !error && (
               <MovieList
@@ -111,7 +114,7 @@ function App() {
             {error && <ErrorMessage />}
           </Box>
         )}
-        <Box width="35%">
+        <Box width={isDesktop ? '80%' : '35%'}>
           {selectedID ? (
             <MovieDetails
               selectedID={selectedID}
