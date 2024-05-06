@@ -1,8 +1,3 @@
-# React + Vite
+<img src='../MovieLibrary/src/assets/MovieLibrary.JPG' alt='movieLibrary'>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a simple website where you can search for movies and add them to your list of movies. The website is built using ReactJS + Vite, utilizing the useState, and useEffect Hook for data fetching from an API and local storage.
