@@ -1,27 +1,34 @@
 import { useRef } from 'react'
 import './style.css'
 import PropTypes from 'prop-types'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
+import { useKeyState } from '../../../CustomHooks/useKeyState'
 
 function Header({ query, setQuery }) {
   const inputEL = useRef(null)
 
-  useEffect(
-    function () {
-      function callback(e) {
-        if (document.activeElement === inputEL.current) return
+  useKeyState('Enter', function () {
+    if (document.activeElement === inputEL.current) return
+    inputEL.current.focus()
+    setQuery('')
+  })
 
-        if (e.code === 'Enter') {
-          inputEL.current.focus()
-          setQuery('')
-        }
-      }
+  // useEffect(
+  //   function () {
+  //     function callback(e) {
+  //       if (document.activeElement === inputEL.current) return
 
-      document.addEventListener('keydown', callback)
-      return document.addEventListener('keydown', callback)
-    },
-    [setQuery]
-  )
+  //       if (e.code === 'Enter') {
+  //         inputEL.current.focus()
+  //         setQuery('')
+  //       }
+  //     }
+
+  //     document.addEventListener('keydown', callback)
+  //     return document.addEventListener('keydown', callback)
+  //   },
+  //   [setQuery]
+  // )
 
   return (
     <>

@@ -6,6 +6,7 @@ import LoadingMessage from '../LoadingMessage'
 import StarRating from '../StarRating'
 import imdbLogo from '../../assets/imdbLogo.png'
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn'
+import { useKeyState } from '../../CustomHooks/useKeyState'
 
 function MovieDetails({ selectedID, onAddMovie, onCloseMovie, watched }) {
   const [movie, setMovie] = useState({})
@@ -47,21 +48,7 @@ function MovieDetails({ selectedID, onAddMovie, onCloseMovie, watched }) {
     onAddMovie(newWatchedMovie)
   }
 
-  useEffect(
-    function () {
-      function callback(e) {
-        if (e.code === 'Escape') {
-          onCloseMovie()
-        }
-      }
-      document.addEventListener('keydown', callback)
-
-      return function () {
-        document.removeEventListener('keydown', callback)
-      }
-    },
-    [onCloseMovie]
-  )
+  useKeyState('Escape', onCloseMovie)
 
   useEffect(
     function () {
